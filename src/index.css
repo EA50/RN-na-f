@@ -1,0 +1,228 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Jura&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+:root {
+    --clr-1: rgb(255, 255, 255);
+    --clr-2: rgb(183, 183, 183);
+    --clr-3: rgb(136, 136, 136);
+    --clr-4: rgb(60, 60, 60);
+    --clr-5: rgb(0, 0, 0);
+
+    --clr-a1: rgb(240, 241, 255);
+    --clr-b1: rgb(101, 90, 255);
+}
+:root {
+    --w-h: 792px;
+    --w-w: 1536px;
+}
+:root {
+    --b-outline: 5px;
+    --b-f: 18px;
+    --b-g: 20px;
+    --m-m: 0%;
+}
+:root {
+    --f-f: 'Open Sans', sans-serif;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+* {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    color: inherit;
+    font-family: inherit;
+}
+*::-webkit-scrollbar {
+    background-color: transparent;
+    width: 5px;
+}
+*::-webkit-scrollbar-thumb {
+    background-color: var(--clr-b1);
+    border-radius: 10px;
+}
+body {
+    background-color: var(--clr-a1);
+    color: var(--clr-5);
+    font-size: var(--b-f);
+    font-family: var(--f-f);
+}
+#root {
+    width: 90%;
+    max-width: 1536px;
+}
+section {
+    width: 100%;
+}
+.ci {
+    display: grid;
+    place-items: center;
+}
+.container {
+    height: inherit;
+    margin: 0 auto;
+}
+input,
+textarea {
+    border-radius: 5px;
+    border-color: transparent;
+}
+input:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--clr-b1);
+}
+a {
+    text-decoration: none;
+    color: var(--clr-5);
+    font-size: calc();
+}
+.icon {
+    height: var(--b-f);
+    aspect-ratio: 1 / 1;
+    margin-right: var(--b-g);
+}
+/*  */
+.a1 {
+    margin: calc(var(--b-g) * 0.5) 0;
+    height: calc(var(--w-h) * 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+header {
+    font-size: calc(var(--b-f) * 2);
+}
+.header-border {
+    height: var(--b-outline);
+    background-color: var(--clr-b1);
+}
+/*  */
+.a2 {
+    height: 5%;
+    width: 50%;
+    position: fixed;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    transition: 0.2s ease;
+    z-index: 101;
+}
+.add-note-form {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+.note-content {
+    width: inherit;
+    padding: calc(var(--b-g) * 0.5);
+    height: inherit;
+    resize: none;
+}
+.form-indicator {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%);
+    transition: 0.3s;
+    color: var(--clr-2);
+}
+.add-note-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    opacity: 0;
+    transform: translate(var(--m-m), 0%);
+    height: 30px;
+    aspect-ratio: 1 / 1;
+}
+.add-note-icon-trnsn {
+    transition: 0.2s ease;
+}
+.a2:hover {
+    height: 33%;
+}
+.a2:hover .add-note-form .add-note-icon {
+    opacity: 1;
+    transform: translate(var(--m-m), -100%);
+}
+.a2-istyping {
+    height: 33%;
+}
+.dis-none {
+    opacity: 0;
+}
+/*  */
+.notes-list {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--b-g);
+    flex-wrap: wrap;
+    margin: calc(var(--b-g) * 2.5) 0;
+}
+.note {
+    margin-top: 30px;
+    position: relative;
+
+    width: auto;
+    padding: calc(var(--b-g) * 0.5);
+    border: 1px solid blue;
+    border-radius: 10px; 
+    word-break: break-all;
+    cursor: default;
+
+    transition: 0.3s ease;
+}
+.note-date {
+    position: absolute;
+    right: 0;
+    transform: translateY(0%);
+    opacity: 0;
+    transition: 0.2s ease;
+}
+.note-description {
+    margin-bottom: calc(var(--b-g) * 1.5);
+}
+
+.note:hover {
+    transform: translateY(-5px);
+}
+.note:hover .note-date {
+    opacity: 1;
+    transform: translateY(-200%);
+}
+/*  */
+.editing-note {
+    position: fixed;
+    bottom: 0%;
+    left: 50%;
+
+    height: 33%;
+    width: 50%;
+    transform: translate(-50%, 0%);
+    transition: 0.2s ease;
+    z-index: 110;
+}
+.note-content-edit {
+    width: 100%;
+    height: 100%;
+    padding: calc(var(--b-g) * 0.5);
+    resize: none;
+}
+.editing-note-hide {
+    transform: translate(-50%, 100%);
+}
+
+/*  */
+.no-notes {
+    display: none;
+}
+.pre-loader {
+    display: unset;
+    top: -1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
